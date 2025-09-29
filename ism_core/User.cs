@@ -102,7 +102,8 @@ namespace ism_core
             }
             public override string ToString()
             {
-                return $"név: {Name}\n " +
+                return "id: {ID}\n" + 
+                $"név: {Name}\n " +
                     $"jelszo :{Password}\n " +
                     $"email: {Email}\n" +
                     $"szul : {RegiDate:yyyy-MM-dd}\n" +

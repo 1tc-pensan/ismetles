@@ -48,5 +48,9 @@ namespace ism_core
             users.Add(user);
             return user;
         }
+        public User GetUserById(int id)
+        {
+            return users.FirstOrDefault(u => u.Id == id);
+        }
     }
 }

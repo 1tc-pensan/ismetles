@@ -8,6 +8,18 @@ namespace ism_console
         public static List<User> users = new List<User>();
         public static UserService userService = new UserService(users);
         public static char separator = Config.CsvSeparator;
+        static void ShowMenu()
+        {
+            Console.WriteLine("USER MENU");
+            Console.WriteLine("1.Új felhasznalo");
+            Console.WriteLine("2.felhasznalo keresés index");
+            Console.WriteLine("3.felhasznalo név friss index");
+            Console.WriteLine("4.felhasznalo törlés index alap");
+            Console.WriteLine("5.felhasznalo listzázása");
+            Console.WriteLine("6. felhasznalo fajlba iras");
+            Console.WriteLine("0.3exit");
+
+        }
         public static void CreateUser(UserService service)
         {
             Console.Write("Írjál egy nevet: ");
@@ -29,6 +41,13 @@ namespace ism_console
             {
                 Console.WriteLine($"Hiba:{ex.Message}");
             }
+        }
+        public static void ReadUser(UserService service)
+        {
+            Console.WriteLine("ID:");
+            int id=int.Parse(Console.ReadLine());
+            User user = service.GetUserById(id);
+            Console.WriteLine(user!=null?user:"nincs ilyen");
         }
 
 
@@ -77,6 +96,30 @@ namespace ism_console
             Console.WriteLine();
             Console.WriteLine(user);
         */
+            while (true)
+            {
+                ShowMenu();
+                Console.Write("Szám: ");
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        CreateUser(userService);
+                        break;
+                    case "2":
+                        CreateUser(userService);
+                        break;
+
+                    case "0":
+                        Console.WriteLine("Kilépés...");
+                        return; // vagy break, ha nem akarod kiléptetni a ciklusból
+
+                    default:
+                        Console.WriteLine("Érvénytelen választás, próbáld újra.");
+                        break;
+                }
+            }
             CreateUser(userService);
             Console.ReadKey();
         }

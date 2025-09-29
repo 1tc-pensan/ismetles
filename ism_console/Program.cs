@@ -100,8 +100,7 @@ namespace ism_console
             {
                 ShowMenu();
                 Console.Write("Szám: ");
-                string choice = Console.ReadLine();
-
+                string choice = Console.ReadKey().KeyChar.ToString();
                 switch (choice)
                 {
                     case "1":

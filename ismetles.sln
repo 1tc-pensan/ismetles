@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ism_console", "ism_console\ism_console.csproj", "{E723A740-B540-4340-A9C3-C68D60889716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ism_core", "ism_core\ism_core.csproj", "{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E723A740-B540-4340-A9C3-C68D60889716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E723A740-B540-4340-A9C3-C68D60889716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E723A740-B540-4340-A9C3-C68D60889716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E723A740-B540-4340-A9C3-C68D60889716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2B90E4DB-18DF-467E-B168-0BB9829DE3E6}
+	EndGlobalSection
+EndGlobal

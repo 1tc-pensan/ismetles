@@ -38,7 +38,7 @@ namespace ism_core
             int levl;
             try
             {
-                levl = User.UserCount;
+                levl = int.Parse(level);
             }
             catch (FormatException)
             {

@@ -66,6 +66,19 @@ namespace ism_console
             bool deleted = service.DeleteUserById(id);
             Console.WriteLine(deleted? "Felhasznalo torolve": "nincs ilyen id-jű felhasznalo");
         }
+        static void ListAllUser(UserService service)
+        {
+            List<User> allUsers = service.GetAllUsers();
+            if (allUsers.Count==0)
+            {
+                Console.WriteLine("Nincs felhasznalo");
+                return;
+            }
+            foreach (User user in allUsers)
+            {
+                Console.WriteLine(user);
+                Console.WriteLine("--------------");
+            }
         static void Main(string[] args)
         {
 
@@ -130,6 +143,9 @@ namespace ism_console
                         break;
                     case "4":
                         DeleteUser(userService);
+                        break;
+                    case "5":
+                        ListAllUser(userService);
                         break;
 
                     case "0":

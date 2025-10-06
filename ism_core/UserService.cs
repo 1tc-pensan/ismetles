@@ -72,5 +72,9 @@ namespace ism_core
             }
             return false;
         }
+        public List<User> GetAllUsers()
+        {
+            return users;
+        }
     }
 }

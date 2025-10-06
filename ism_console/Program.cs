@@ -45,14 +45,30 @@ namespace ism_console
         public static void ReadUser(UserService service)
         {
             Console.WriteLine("ID:");
-            int id=int.Parse(Console.ReadLine());
+            int id = int.Parse(Console.ReadLine());
             User user = service.GetUserById(id);
-            Console.WriteLine(user!=null?user:"nincs ilyen");
+            Console.WriteLine(user != null ? user : "nincs ilyen");
         }
 
-
+        static void UpdateUser(UserService service)
+        {
+            Console.WriteLine("Módosítandó user ID: ");
+            int id = int.Parse(Console.ReadLine());
+            Console.WriteLine("Új név: ");
+            string newName = Console.ReadLine();
+            bool updated = service.UpdateUserName(id, newName);
+            Console.WriteLine(updated ? "nev friss" : "nincs ilyen nev");
+        }
+        static void DeleteUser (UserService service)
+        {
+            Console.WriteLine("Törlendő felhasználó Id:");
+            int id=int.Parse(Console.ReadLine());
+            bool deleted = service.DeleteUserById(id);
+            Console.WriteLine(deleted? "Felhasznalo torolve": "nincs ilyen id-jű felhasznalo");
+        }
         static void Main(string[] args)
         {
+
 
             /*string csv = "2;patrik;jelszo123;patrik@gmail.com;2025-09-12;1";
             try
@@ -99,7 +115,7 @@ namespace ism_console
             while (true)
             {
                 ShowMenu();
-                Console.Write("Szám: ");
+                Console.Write("Szám: \n");
                 string choice = Console.ReadKey().KeyChar.ToString();
                 switch (choice)
                 {
@@ -107,7 +123,13 @@ namespace ism_console
                         CreateUser(userService);
                         break;
                     case "2":
-                        CreateUser(userService);
+                        ReadUser(userService);
+                        break;
+                    case "3":
+                        UpdateUser(userService);
+                        break;
+                    case "4":
+                        DeleteUser(userService);
                         break;
 
                     case "0":

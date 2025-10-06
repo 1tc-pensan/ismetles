@@ -119,7 +119,6 @@ namespace ism_console
                         break;
                 }
             }
-            CreateUser(userService);
             Console.ReadKey();
         }
     }

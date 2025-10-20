@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Xml;
 
 namespace ism_core
 {
@@ -72,9 +74,43 @@ namespace ism_core
             }
             return false;
         }
+        public void LoadFromFile(string filePath, char separator)
+        {
+            users.Clear();
+            try
+            {
+                using (StreamReader sr=new StreamReader(filePath))
+                {
+                    string line;
+                    while ((line=sr.ReadLine()) !=null)
+                    {
+                        if ((string.IsNullOrWhiteSpace(line)) || (line.StartsWith("#")))
+                        {
+                            continue;
+                        }
+                        try
+                        {
+                            User user = ParseFromCsv(line, separator);
+                            users.Add(user);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Hiba sor kihagyva:" +ex.Message);   
+                            System.Diagnostics.Debug.WriteLine(ex.Message);
+                        }
+                    }
+                }
+            }
+            catch (IOException ioEx)
+            {
+                Console.WriteLine($"Hiba {ioEx.Message}");
+                System.Diagnostics.Debug.WriteLine($"Hiba {ioEx.Message}");
+            }
+        }
         public List<User> GetAllUsers()
         {
             return users;
         }
+        
     }
 }

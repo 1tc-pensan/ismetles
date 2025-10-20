@@ -69,7 +69,7 @@ namespace ism_console
         static void ListAllUser(UserService service)
         {
             List<User> allUsers = service.GetAllUsers();
-            if (allUsers.Count==0)
+            if (allUsers.Count == 0)
             {
                 Console.WriteLine("Nincs felhasznalo");
                 return;
@@ -79,6 +79,7 @@ namespace ism_console
                 Console.WriteLine(user);
                 Console.WriteLine("--------------");
             }
+        }
         static void Main(string[] args)
         {
 
@@ -125,7 +126,7 @@ namespace ism_console
             Console.WriteLine();
             Console.WriteLine(user);
         */
-            while (true)
+            userService.LoadFromFile(Config.UserFilePath, separator);
             {
                 ShowMenu();
                 Console.Write("Szám: \n");

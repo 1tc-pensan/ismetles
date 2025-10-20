@@ -80,6 +80,19 @@ namespace ism_console
                 Console.WriteLine("--------------");
             }
         }
+        static void SaveAllUser(UserService service)
+        {
+            try
+            {
+                service.SaveToFile(Config.UserFilePath, separator);
+                Console.WriteLine("Felhasznalok elmentve");
+                System.Diagnostics.Debug.WriteLine("Felhasznalok elmentve");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Hiba a mentés során: {ex.Message}");
+            }
+        }
         static void Main(string[] args)
         {
 
@@ -148,6 +161,9 @@ namespace ism_console
                     case "5":
                         ListAllUser(userService);
                         break;
+                    case "6":
+                        SaveAllUser(userService);
+                        break;
 
                     case "0":
                         Console.WriteLine("Kilépés...");
@@ -158,6 +174,7 @@ namespace ism_console
                         break;
                 }
             }
+            ShowMenu();
             Console.ReadKey();
         }
     }

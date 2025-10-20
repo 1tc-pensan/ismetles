@@ -107,6 +107,30 @@ namespace ism_core
                 System.Diagnostics.Debug.WriteLine($"Hiba {ioEx.Message}");
             }
         }
+        public void SaveToFile(string filePath, char separator)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(filePath))
+                {
+                    foreach (User user in users)
+                    {
+                        string line = $"{user.Id}{separator}" +
+                                      $"{user.Name}{separator}" +
+                                      $"{user.Password}{separator}" +
+                                      $"{user.Email}{separator}" +
+                                      $"{user.RegiDate:yyyy-MM-dd}{separator}" +
+                                      $"{user.Level}";
+                        sw.WriteLine(line);
+                    }
+                }
+            }
+            catch (IOException ioEx)
+            {
+                Console.WriteLine($"Hiba: {ioEx.Message}");
+                System.Diagnostics.Debug.WriteLine($"Hiba: {ioEx.Message}");
+            }
+        }
         public List<User> GetAllUsers()
         {
             return users;

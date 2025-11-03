@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ism_console", "ism_console\ism_console.csproj", "{E723A740-B540-4340-A9C3-C68D60889716}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ism_core", "ism_core\ism_core.csproj", "{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ism_core", "ism_core\ism_core.csproj", "{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ism_teszt", "ism_teszt\ism_teszt.csproj", "{751DF44C-D894-4475-899A-0354048B6D20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28F6E30B-D25C-4E3E-9719-FDB9E3058FBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{751DF44C-D894-4475-899A-0354048B6D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{751DF44C-D894-4475-899A-0354048B6D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{751DF44C-D894-4475-899A-0354048B6D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{751DF44C-D894-4475-899A-0354048B6D20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

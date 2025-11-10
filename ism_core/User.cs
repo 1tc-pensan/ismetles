@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ism_core
 {
-
         public class User
         {
             //osztálysintű
@@ -65,7 +64,7 @@ namespace ism_core
                 {
                     if (!value.Contains('@'))
                     {
-                        throw new ArgumentException("nem jo more");
+                    throw new ArgumentException("nem jo az email");
                     }
                     email = value;
                 }

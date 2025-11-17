@@ -36,7 +36,7 @@ namespace ism_teszt
             {
                 File.Delete(tempFilePath);
             }
-            //Takarítási műveletek
+            //Takarítási művelet
         }
     }
 }

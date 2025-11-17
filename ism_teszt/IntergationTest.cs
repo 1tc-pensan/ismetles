@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace ism_teszt
 {
-    public class IntergationTest
+    public class IntergationTest: IDisposable
     {
         private readonly string tempFilePath;
         private readonly char separator = ';';

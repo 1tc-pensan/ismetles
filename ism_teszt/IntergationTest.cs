@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace ism_teszt
 {
@@ -48,6 +49,36 @@ namespace ism_teszt
             Assert.True(deleteResult);
             //ellenerzés,hogy a users lista a törölt usert
             Assert.Empty(users);
+        }
+        [Fact]
+        public void ExportUserToCsv_IntegrationTest()
+        {
+            //új user létrehozása a users Listához
+            var user = service.CreateUser("Teszt Elek", "pass123", "tesztelek@gmail.com", DateTime.Now.ToString(), "3");
+            //users lista kiírása CSV fájlba (tempFilePath-re)
+            service.SaveToFile(tempFilePath, separator);
+            //Fájl létezésének ellenőrzése
+            Assert.True(File.Exists(tempFilePath));
+            //Fájl tartalmának beolvasása egy string tömbe
+            string[] lines = File.ReadAllLines(tempFilePath);
+            //Ellenőrzés,hogy a fájl tartalma egy sor-e
+            Assert.Single(lines);
+            //Ellenőrzés,hogy a sorban van e "A létrehozott user neve" string
+            Assert.Contains("Teszt Elek", lines[0]);
+        }
+        [Fact]
+        public void LoadUsersFromCsv_IntegrationTest()
+        {
+            //csv sor létrehozása
+            string csvLine = $"1{separator}Teszt Elek{separator}pass123{separator}tesztelek@gmail.com{separator}{DateTime.Now:yyyy-MM-dd}{separator}3";
+            //csv sor fájlba írása
+            File.WriteAllText(tempFilePath, csvLine);
+            //users lista betöltése a fájlból
+            service.LoadFromFile(tempFilePath, separator);
+            //ellenőrzés,hogy a users listában van e egy user
+            Assert.Single(users);
+            //ellenőrzés,hogy a user neve megegyezik e a csv sorban lévő névvel
+            Assert.Equal("Teszt Elek", users[0].Name);
         }
         //Takarítás
         public void Dispose()

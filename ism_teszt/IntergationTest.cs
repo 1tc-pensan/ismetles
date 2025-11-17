@@ -29,6 +29,26 @@ namespace ism_teszt
             Assert.Single(users);
             Assert.Equal("Teszt Elek", user.Name);
         }
+        [Fact]
+        public void UpdateUserName_IntegrationTest()
+        {
+            var user=service.CreateUser("Teszt Elek","pass123","tesztelek@gmail.com", DateTime.Now.ToString(), "3");
+            bool updateresult= service.UpdateUserName(user.Id, "UjNev");
+            Assert.True(updateresult);
+            Assert.Equal("UjNev", user.Name);
+        }
+        [Fact]
+        public void DeleteUserById_IntegrationTest()
+        {
+            //új user létrehozása a users Listához
+            var user = service.CreateUser("Teszt Elek", "pass123", "tesztelek@gmail.com", DateTime.Now.ToString(), "3");
+            //függvény meghívása a user törlésére
+            bool deleteResult = service.DeleteUserById(user.Id);
+            //ellenőrzés,hogy a törlés sikeres volt-e
+            Assert.True(deleteResult);
+            //ellenerzés,hogy a users lista a törölt usert
+            Assert.Empty(users);
+        }
         //Takarítás
         public void Dispose()
         {

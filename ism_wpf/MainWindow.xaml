@@ -23,7 +23,6 @@
         </DataGrid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
             <Button x:Name="AddUserButton" Content="User Hozzadás" Width="100" Margin="5" Click="AddUserButton_Click"/>
-            <Button x:Name="EditUserButton" Content="User Szerkeztése" Width="100" Margin="5" Click="EditUserButton_Click"/>
             <Button x:Name="DeleteUserButton" Content="User Törlése" Width="100" Margin="5" Click="DeleteUserButton_Click"/>
             <Button x:Name="SaveButtion" Content="Mentés Csv-be" Width="100" Margin="5" Click="SaveButton_Click"/>
             <Button x:Name="LoadButton" Content="Betöltés Csv-ből" Width="100" Margin="5" Click="LoadButton_Click"/>

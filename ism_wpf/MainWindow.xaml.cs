@@ -20,5 +20,25 @@ namespace ism_wpf
         {
             InitializeComponent();
         }
+
+        private void AddUserButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteUserButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LoadButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,0 +1,32 @@
+﻿<Window x:Class="ism_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ism_wpf"
+        mc:Ignorable="d"
+        Title="User Management" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" x:Name="dgUsers" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10" SelectionMode="Single" SelectionUnit="FullRow" IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="*"/>
+                <DataGridTextColumn Header="Név" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Jelszo" Binding="{Binding Password}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
+                <DataGridTextColumn Header="Regisztáriós Dátum" Binding="{Binding RegiDate}" Width="*"/>
+                <DataGridCheckBoxColumn Header="Level" Binding="{Binding Level}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button x:Name="AddUserButton" Content="User Hozzadás" Width="100" Margin="5" Click="AddUserButton_Click"/>
+            <Button x:Name="EditUserButton" Content="User Szerkeztése" Width="100" Margin="5" Click="EditUserButton_Click"/>
+            <Button x:Name="DeleteUserButton" Content="User Törlése" Width="100" Margin="5" Click="DeleteUserButton_Click"/>
+            <Button x:Name="SaveButtion" Content="Mentés Csv-be" Width="100" Margin="5" Click="SaveButton_Click"/>
+            <Button x:Name="LoadButton" Content="Betöltés Csv-ből" Width="100" Margin="5" Click="LoadButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

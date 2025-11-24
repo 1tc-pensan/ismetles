@@ -25,7 +25,6 @@ namespace ism_core
                 Password = password;
                 RegiDate = DateTime.Parse(regiDate);
                 Level = level;
-                UserCount++;
             }
             public User()
             {

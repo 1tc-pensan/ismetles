@@ -18,7 +18,7 @@
                 <DataGridTextColumn Header="Jelszo" Binding="{Binding Password}" Width="*"/>
                 <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*"/>
                 <DataGridTextColumn Header="Regisztáriós Dátum" Binding="{Binding RegiDate}" Width="*"/>
-                <DataGridCheckBoxColumn Header="Level" Binding="{Binding Level}" Width="*"/>
+                <DataGridTextColumn Header="Level" Binding="{Binding Level}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
